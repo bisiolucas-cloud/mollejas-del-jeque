@@ -431,7 +431,7 @@ async function sendMagicLink(){
   if(!email){toast("Ingresá tu email");return;}
   const msg=document.getElementById("login-msg");
   msg.textContent="Enviando...";
-  const{error}=await db.auth.signInWithOtp({email,options:{emailRedirectTo:window.location.href}});
+  const{error}=await db.auth.signInWithOtp({email,options:{emailRedirectTo:"https://mollejas-del-jeque.netlify.app"}});
   if(error){msg.textContent="Error: "+error.message;return;}
   msg.innerHTML="✅ Link enviado. Revisá tu email y hacé click en el link para entrar.<br><small style='color:var(--muted)'>También revisá spam.</small>";
 }
