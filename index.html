@@ -16,11 +16,6 @@ body{font-family:"Barlow",sans-serif;background:var(--bg);color:var(--text);min-
 @keyframes bounce{to{transform:translateY(-16px);}}
 .splash-name{font-family:"Barlow Condensed",sans-serif;font-size:26px;font-weight:900;letter-spacing:3px;color:var(--g);text-align:center;}
 .splash-sub{font-size:13px;color:var(--muted2);}
-#login-screen{position:fixed;inset:0;background:var(--bg);z-index:8000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;}
-#login-screen.hidden{display:none;}
-.login-card{background:var(--s1);border:1px solid var(--border2);border-radius:20px;padding:32px 24px;width:100%;max-width:380px;}
-.login-title{font-family:"Barlow Condensed",sans-serif;font-size:26px;font-weight:900;color:var(--g);text-align:center;margin-bottom:4px;letter-spacing:2px;}
-.login-sub{font-size:13px;color:var(--muted2);text-align:center;margin-bottom:20px;}
 .app{display:flex;flex-direction:column;min-height:100vh;}
 .header{background:linear-gradient(180deg,rgba(0,230,118,.06),transparent);border-bottom:1px solid var(--border);padding:14px 16px 0;position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);}
 .header-row1{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
@@ -156,15 +151,9 @@ textarea{resize:vertical;min-height:70px;}
   <div class="splash-sub" id="splash-sub">Cargando...</div>
 </div>
 
-    <div class="login-title">LAS MOLLEJAS<br>DEL JEQUE</div>
-    <div class="login-sub">Ingresá tu email para acceder</div>
-    <div class="fg"><label class="flbl">Email</label><input type="email" id="login-email" placeholder="tu@email.com"></div>
-    <button class="btn btn-green btn-full" onclick="sendMagicLink()">Enviar link de acceso ✉️</button>
-    <div id="login-msg" style="margin-top:12px;font-size:13px;color:var(--muted2);text-align:center;line-height:1.6;"></div>
-  </div>
-</div>
+    
 
-<div class="app" id="main-app" style="display:none;">
+<div class="app" id="main-app" style="display:none;"><!-- no-login -->
 <div class="header">
   <div class="header-row1">
     <div class="team-brand">
@@ -423,7 +412,7 @@ function goTab(tab){
   if(tab==="trofeos")renderTrophies();
 }
 
-// No login required
+
 
 async function initAuth(){
   // No auth - show player picker
